@@ -1,4 +1,4 @@
-@Login
+@login
 Feature: Login Logout Test
 Description: login logout test for beanworks
 
