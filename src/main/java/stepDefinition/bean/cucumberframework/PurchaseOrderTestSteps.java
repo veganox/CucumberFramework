@@ -60,13 +60,12 @@ public void user_is_on_homepage() throws Throwable {
 
  @When("^user enters \"([^\"]*)\"$") 
  public void user_enters(String total) throws Throwable {
-	 driver.findElement(By.xpath(".//span [@class=\"cell-value cell-currency\"]"));
-	 driver.findElement(By.xpath(".//*[@id=\"lineItemsContainer\"]/div/div/div/div[2]/div/div/div[2]/div/div[10]/div/div/span/div/span"));
-	 //WebElement poTotal=driver.findElement(By.xpath(".//*[@id=\"lineItemsContainer\"]/div/div/div/div[2]/div/div/div[2]/div/div[10]/div/div/span/div/span"));
-	 //Actions actions = new Actions(driver);
-	 //actions.moveToElement(poTotal);
-	 //actions.click();
-	 //actions.sendKeys(total);
+	 //driver.findElement(By.xpath(".//span [@class=\"cell-value cell-currency\"]"));
+	 WebElement poTotal = driver.findElement(By.xpath(".//*[@id=\"lineItemsContainer\"]/div/div/div/div/div[2]/div/div/div[2]/div/div[10]/div/div/span/div/span"));
+	 Actions actions = new Actions(driver);
+	 actions.moveToElement(poTotal);
+	 actions.click();
+	 actions.sendKeys(total).perform();
 	}
 
  
