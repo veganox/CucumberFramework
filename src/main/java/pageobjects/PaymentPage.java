@@ -1,4 +1,4 @@
-package pageobjects.bean.cucumberframework;
+package pageobjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +11,7 @@ public class PaymentPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(how=How.XPATH, using="//span[contains(text(),'Payment Number')]")
+	@FindBy(how=How.XPATH, using="//span[contains(text(),'Reference #')]")
 	private WebElement paymentPage;
 	
 	public void verifyPaymentPage() {

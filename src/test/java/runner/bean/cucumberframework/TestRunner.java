@@ -6,9 +6,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/smokeTests"
-		,glue = {"stepDefinition.bean.cucumberframework"}
-		,tags= {"@smoke,@login"}
+		features = "src/test/resources/smokeTests",
+		glue = {"stepDefinition.bean.cucumberframework"},
+		tags= {"@login"}
 		)
 public class TestRunner {
 }
