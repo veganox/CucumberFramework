@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepDefinition.bean.cucumberframework;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepDefinition.bean.cucumberframework;
 
 import cucumber.TestContext;
 import cucumber.api.java.en.Then;

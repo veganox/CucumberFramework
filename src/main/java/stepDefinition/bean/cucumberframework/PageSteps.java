@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepDefinition.bean.cucumberframework;
 
 import cucumber.TestContext;
 import cucumber.api.java.en.Then;
@@ -16,6 +16,8 @@ public class PageSteps {
 	public PageSteps(TestContext context) {
 		testContext=context;
 		invoicePage = testContext.getPageObjectManager().getInvoicePage();
+		poPage = testContext.getPageObjectManager().getPurchaseOrderPage();
+		paymentPage = testContext.getPageObjectManager().getPaymentPage();
 	}
 	
 	@Then("^user logins to \"([^\"]*)\" successfully$")
