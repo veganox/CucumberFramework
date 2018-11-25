@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: runner.bean.cucumberframework.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 8, Time elapsed: 8.547 sec
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.725 sec

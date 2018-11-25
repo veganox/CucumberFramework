@@ -25,7 +25,6 @@ public class LoginPageSteps {
 	public void user_can_logout_successfully() throws Throwable {
 		loginPage.selectSettings();
 		loginPage.selectSignOut();
-		testContext.getWebDriverManager().closeDriver();
 	}
 	
 }
