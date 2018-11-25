@@ -4,14 +4,14 @@ Description: login logout test for beanworks
 
 
 Scenario Outline: Valid users should be able to login and logout from beanworks
-	Given user is on signin page
+	Given user is on signinPage
  	When user enters "<username>" and "<password>"
  	Then user logins to "<userpage>" successfully
  	And user can logout successfully
 
  	Examples:
- 	| username 									| password 	| userpage |
- 	| invoicecreator@smoke.bean | pwd 			| invoicemodule |
- 	| pocreator@smoke.bean 			| pwd 			| pomodule |
- 	| paymentcreator@smoke.bean | pwd 			| paymentmodule |
+ 	| username 									| password 	| userpage 			|
+ 	| invoicecreator@smoke.bean | pwd 			| invoice 			|
+ 	| pocreator@smoke.bean 			| pwd 			| purchaseorder |
+ 	| paymentcreator@smoke.bean | pwd 			| payment 			|
  	

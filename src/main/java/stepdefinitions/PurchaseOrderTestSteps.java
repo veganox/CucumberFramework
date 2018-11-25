@@ -1,4 +1,4 @@
-package stepDefinition.bean.cucumberframework;
+package stepdefinitions;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -58,15 +57,40 @@ public void user_is_on_homepage() throws Throwable {
 	 driver.findElement(By.xpath(vendorxpath)).click();
  }
 
- @When("^user enters \"([^\"]*)\"$") 
- public void user_enters(String total) throws Throwable {
-	 //driver.findElement(By.xpath(".//span [@class=\"cell-value cell-currency\"]"));
-	 WebElement poTotal = driver.findElement(By.xpath(".//*[@id=\"lineItemsContainer\"]/div/div/div/div/div[2]/div/div/div[2]/div/div[10]/div/div/span/div/span"));
+ @When("^user enters \"([^\"]*)\" under header description$")
+ public void user_enters_under_header_description(String description_text) throws Throwable {
+	 driver.findElement(By.name("description")).sendKeys(description_text);	 
+ }
+
+ @When("^user sets Billable to \"([^\"]*)\"$")
+ public void user_sets_Billable_to(String billable) throws Throwable {
+	 WebElement setBillable = driver.findElement(By.xpath("(.//span[@class=\"cell-value\"])[4]"));
+	 Actions actions = new Actions(driver);
+	 actions.moveToElement(setBillable);
+	 actions.doubleClick();
+	 actions.sendKeys(billable).perform();
+	 driver.findElement(By.xpath(".//div[@class='Select-option is-focused']")).click();
+ }
+
+ @When("^user sets Customer to \"([^\"]*)\"$")
+ public void user_sets_Customer_to(String customer) throws Throwable {
+	 WebElement setCustomer = driver.findElement(By.xpath("(.//span[@class=\"cell-value\"])[6]"));
+	 Actions actions = new Actions(driver);
+	 actions.moveToElement(setCustomer);
+	 actions.doubleClick();
+	 actions.sendKeys(customer).perform();
+	 driver.findElement(By.xpath(".//div[@class='Select-option is-focused']")).click();
+ }
+
+ @When("^user sets Total to \"([^\"]*)\"$")
+ public void user_sets_Total_to(String total) throws Throwable {
+	 // xpath for lineitem account: (//span[@class="cell-value"])[3]
+	 WebElement poTotal = driver.findElement(By.xpath("(.//span[@class=\"cell-value cell-currency\"])[last()]"));
 	 Actions actions = new Actions(driver);
 	 actions.moveToElement(poTotal);
 	 actions.click();
 	 actions.sendKeys(total).perform();
-	}
+}
 
  
  @When("^user selects save$")
@@ -76,7 +100,7 @@ public void user_is_on_homepage() throws Throwable {
 
  @Then("^purchase order should be created$")
  public void purchase_order_should_be_created() throws Throwable {
-	 //driver.findElement(By.name("Purchase Order Saved"));
+
  }
 
  @Then("^image buttons should appear$")
