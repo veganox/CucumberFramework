@@ -37,10 +37,10 @@ public void user_is_on_homepage() throws Throwable {
 	 driver.findElement(By.id("posModule"));
  }
 
- @Given("^user is on Purchase Order creation page$")
+ /*@Given("^user is on Purchase Order creation page$")
  public void user_is_on_Purchase_Order_creation_page() throws Throwable {
 	 driver.findElement(By.linkText("Create")).click();
- }
+ }*/
 
  @When("^user selects legalentity \"([^\"]*)\"$")
  public void user_selects_a(String legalentity) throws Throwable {
@@ -98,10 +98,10 @@ public void user_is_on_homepage() throws Throwable {
 	 driver.findElement(By.id("save")).click();
  }
 
- @Then("^purchase order should be created$")
+ /*@Then("^purchase order should be created$")
  public void purchase_order_should_be_created() throws Throwable {
 
- }
+ }*/
 
  @Then("^image buttons should appear$")
  public void image_buttons_should_appear() throws Throwable {

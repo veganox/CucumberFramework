@@ -20,8 +20,8 @@ public class PageSteps {
 		paymentPage = testContext.getPageObjectManager().getPaymentPage();
 	}
 	
-	@Then("^user logins to \"([^\"]*)\" successfully$")
-	public void user_logins_to_successfully(String module) throws Throwable {
+	@Then("^user should login to \"([^\"]*)\" successfully$")
+	public void user_should_login_to_successfully(String module) throws Throwable {
 		System.out.println(module);
 		if (module.equals("invoice")) {
 			invoicePage.verifyInvoicePage();

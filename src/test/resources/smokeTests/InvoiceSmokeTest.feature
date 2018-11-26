@@ -2,15 +2,11 @@
 Feature: Invoice Test
 Description: invoice users login 
 
-
-Scenario Outline: Valid users should be able to login and logout from beanworks
+Background:
 	Given user is on signinPage
- 	When user enters "<username>" and "<password>"
- 	Then user logins to "<userpage>" successfully
- 	And user can logout successfully
 
- 	Examples:
- 	| username 												| password 	| userpage 			|
- 	| invoicecreator@smoke.bean 			| pwd 			| invoice 			|
- 	| invoiceapprover@smoke.bean 			| pwd 			| invoice 			|
- 	
+Scenario: Invoice creator should be able to create new invoice
+	Given user login to "invoice" successfully
+	When user creates a new invoice 
+	Then user should be able to submit the invoice for approval
+	

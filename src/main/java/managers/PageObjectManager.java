@@ -11,6 +11,8 @@ public class PageObjectManager {
 	private InvoicePage invoicePage;
 	private PurchaseOrderPage purchaseOrderPage;
 	private PaymentPage paymentPage;
+	private HeaderArea header;
+	private LineItemArea lineItem;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver=driver;
@@ -34,5 +36,13 @@ public class PageObjectManager {
 
 	public PaymentPage getPaymentPage() {
 		return (paymentPage==null) ? new PaymentPage(driver) : paymentPage;
+	}
+	
+	public HeaderArea getHeader() {
+		return (header==null) ? new HeaderArea(driver) : header;
+	}
+
+	public LineItemArea getLineItem() {
+		return (lineItem==null) ? new LineItemArea(driver) : lineItem;
 	}
 }
