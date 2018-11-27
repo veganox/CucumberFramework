@@ -45,10 +45,14 @@ public class PurchaseOrderSteps {
 	@When("^pocreator enters \"([^\"]*)\",\"([^\"]*)\", \"([^\"]*)\" and \"([^\"]*)\" in lineitem$")
 	public void pocreator_enters_and_in_lineitem(String accountName, String customerName, String item, String total) throws Throwable {
 		System.out.println("entering account name\n");
-		lineItem.setAccount(accountName);
-		lineItem.setCustomer(customerName);
-		lineItem.setItem(item);
-		lineItem.setTotal(total);
+		if (accountName != null && !accountName.isEmpty())
+			lineItem.setAccount(accountName);
+		if (customerName != null && !customerName.isEmpty())
+			lineItem.setCustomer(customerName);
+		if (item != null && !item.isEmpty())
+			lineItem.setItem(item);
+		if (total != null && !total.isEmpty())
+			lineItem.setTotal(total);
 	}
 
 	 @When("^user selects save po$")

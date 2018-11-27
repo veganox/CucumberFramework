@@ -79,12 +79,14 @@ public class HeaderArea {
 
 	public String getVal(WebElement webElement) {
 	    JavascriptExecutor e = (JavascriptExecutor) driver;
-	    return (String) e.executeScript(String.format("return $('#%s').val();", webElement.getAttribute("value")));
+	    return (String) e.executeScript(String.format("return arguments[5].value", webElement));
 	}
 	
 	public String getPONumber() {
-		String poNumber = getVal(poNumberContainer);
-		System.out.println("PO " + poNumberContainer.toString());
+		//String poNumber = getVal(poNumberContainer);
+		String poNumber=poNumberContainer.getAttribute("innerHTML");
+		System.out.println("PO " + poNumber);
+		System.out.println(poNumberContainer.getAttribute("innerText"));
 		return poNumber;
 	}
 }
